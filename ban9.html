@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Баня 1 — затишна баня в Крижанівці. Парна на дровах, гідромасаж, басейн, мангал та кімната відпочинку. Місце для релаксу та зустрічей з друзями до 10 осіб.">
+    <title>Баня 1 | Справжня парна у Крижанівці</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #2B241E;
+            color: #E9DFD3;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* деревянная текстура, тёмный уютный фон */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        h1, h2, h3, .logo, .serif, .banya-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1rem;
+            color: #F0DDB0;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.75rem;
+            color: #E2C28B;
+        }
+
+        .section-subtitle {
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C2A575;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            border-bottom: 1px solid rgba(194, 165, 117, 0.2);
+        }
+
+        /* тёмная деревянная тема */
+        .bg-wood {
+            background: #2B241E;
+        }
+        .bg-darkwood {
+            background: #221C17;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #C2A575;
+            color: #1E1915;
+            padding: 0.9rem 2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 40px;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .btn:hover {
+            background: #DDB67E;
+            transform: translateY(-3px);
+        }
+
+        /* header / navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            background: rgba(30, 25, 21, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #C2A57540;
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .logo-icon {
+            font-size: 2rem;
+            color: #E0B87A;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #F5E2B2;
+            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+        }
+        .logo span {
+            font-weight: 400;
+            font-size: 1.2rem;
+            color: #BD9D6B;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #EFE0CD;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            color: #E2B87A;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #E2B87A;
+            cursor: pointer;
+        }
+
+        /* hero секция с фоном back.jpg, камнями и паром внизу */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 6rem;
+            background: linear-gradient(0deg, rgba(32, 26, 21, 0.7), rgba(47, 38, 32, 0.7)), url('back.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            color: #F9E5B3;
+        }
+        .hero h1 i {
+            color: #D9AA60;
+            font-style: italic;
+        }
+        .hero-lead {
+            font-size: 1rem;
+            color: #F0E3D4;
+            margin: 1.2rem 0 1.5rem;
+            max-width: 500px;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .hero-img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 25px 35px rgba(0,0,0,0.5);
+            border: 1px solid #B4915F;
+        }
+        .badge-wood {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.8rem 0 1rem;
+        }
+        .badge {
+            background: rgba(63, 49, 38, 0.85);
+            backdrop-filter: blur(4px);
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ========= КАМНИ И ПАР ВНИЗУ БЛОКА ========= */
+        .pebble-steam-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+        /* полоса гальки */
+        .pebble-strip-bottom {
+            background: repeating-linear-gradient(45deg, rgba(90, 75, 60, 0.95) 0px, rgba(90, 75, 60, 0.95) 5px, rgba(70, 58, 46, 0.9) 5px, rgba(70, 58, 46, 0.9) 14px);
+            width: 100%;
+            height: 70px;
+            position: relative;
+            box-shadow: inset 0 8px 12px rgba(0,0,0,0.4), 0 -2px 6px rgba(0,0,0,0.2);
+            border-top: 2px solid #6E5A44;
+        }
+        .pebble-strip-bottom::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 12% 25%, #8E7658 2.5px, transparent 2.5px),
+                              radial-gradient(circle at 40% 70%, #7A6348 3px, transparent 3px),
+                              radial-gradient(circle at 68% 30%, #9C8462 2px, transparent 2px),
+                              radial-gradient(circle at 85% 65%, #6B543C 3.5px, transparent 3.5px),
+                              radial-gradient(circle at 25% 85%, #B2936C 2px, transparent 2px);
+            background-size: 55px 55px, 80px 80px, 100px 100px, 120px 120px, 70px 70px;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+        /* клубы густого пара, поднимающиеся вверх от камней */
+        .steam-clouds {
+            position: absolute;
+            bottom: 65px;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .steam-puff-bottom {
+            position: absolute;
+            background: radial-gradient(ellipse at center, rgba(235, 220, 185, 0.55) 0%, rgba(210, 185, 140, 0.3) 40%, rgba(180, 150, 110, 0) 80%);
+            border-radius: 60%;
+            filter: blur(26px);
+            animation: floatUpSlow 7s infinite alternate ease-in-out;
+        }
+        .sp1 { width: 150px; height: 150px; bottom: 15px; left: 3%; animation-duration: 7s; animation-delay: 0s; opacity: 0.8; }
+        .sp2 { width: 210px; height: 210px; bottom: 40px; left: 22%; animation-duration: 10s; animation-delay: 1.2s; opacity: 0.85; filter: blur(30px);}
+        .sp3 { width: 130px; height: 130px; bottom: -5px; left: 48%; animation-duration: 6s; animation-delay: 0.5s; opacity: 0.7; }
+        .sp4 { width: 190px; height: 190px; bottom: 25px; left: 68%; animation-duration: 9s; animation-delay: 2s; opacity: 0.75; }
+        .sp5 { width: 240px; height: 240px; bottom: -15px; left: 84%; animation-duration: 12s; animation-delay: 0.8s; opacity: 0.65; filter: blur(34px);}
+        .sp6 { width: 110px; height: 110px; bottom: 55px; left: 12%; animation-duration: 5.5s; animation-delay: 3.2s; opacity: 0.7; }
+        .sp7 { width: 170px; height: 170px; bottom: 10px; left: 38%; animation-duration: 8s; animation-delay: 1.5s; opacity: 0.8; }
+        .steam-base-layer-bottom {
+            position: absolute;
+            bottom: 55px;
+            left: -5%;
+            width: 110%;
+            height: 100px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(210, 185, 140, 0.45) 0%, rgba(190, 155, 115, 0.2) 50%, rgba(0,0,0,0) 100%);
+            filter: blur(20px);
+            animation: baseFloatBottom 5s infinite alternate;
+        }
+        @keyframes floatUpSlow {
+            0% {
+                transform: translateY(0) scale(0.9);
+                opacity: 0.45;
+            }
+            100% {
+                transform: translateY(-110px) scale(1.3);
+                opacity: 0;
+            }
+        }
+        @keyframes baseFloatBottom {
+            0% { opacity: 0.3; transform: translateY(0px); }
+            100% { opacity: 0.8; transform: translateY(-35px); }
+        }
+
+        /* ========= СЕКЦІЯ "ТРАДИЦІЙНА ПАРНА" З ГІФКОЮ PAR.GIF ========= */
+        .about-par-section {
+            position: relative;
+            overflow: hidden;
+        }
+        .par-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .about-par-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ========= СЕКЦІЯ "НАШІ ПРОЦЕДУРИ" З ФОНОМ RITUAL.JPG ========= */
+        .services-bg-section {
+            position: relative;
+            overflow: hidden;
+        }
+        .ritual-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 0;
+            filter: brightness(0.8) contrast(1.1);
+        }
+        .services-bg-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        .services-bg-section .service-card {
+            background: rgba(55, 46, 38, 0.85);
+            backdrop-filter: blur(3px);
+        }
+
+        /* ========= СЕКЦІЯ ГАЛЕРЕЇ З ФОНОМ GALL.JPG ========= */
+        .gallery-bg-section {
+            position: relative;
+            overflow: hidden;
+        }
+        .gall-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 0;
+            filter: brightness(0.7) contrast(1.2);
+        }
+        .gallery-bg-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* cards уютных услуг */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: #372E26;
+            padding: 2rem;
+            border-radius: 28px;
+            transition: 0.25s;
+            border: 1px solid #5B4A39;
+        }
+        .service-card:hover {
+            background: #42382F;
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            font-size: 2.3rem;
+            color: #DDB67E;
+            margin-bottom: 1rem;
+        }
+
+        /* галерея з локальними фото 1-6.jpg */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 1.2rem;
+        }
+        .gallery-grid img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 1px solid #8B7552;
+            transition: 0.2s;
+            background: #2A231C;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+            border-color: #C2A575;
+        }
+
+        /* особенности: баня на дровах, бассейн и тд */
+        .features-flex {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature-item {
+            background: #322922;
+            padding: 1rem 1.2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        /* отзывы (обобщённые, без массажа) */
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .testi-card {
+            background: #2F2720;
+            padding: 1.8rem;
+            border-radius: 28px;
+            width: 300px;
+            flex: 1;
+            min-width: 250px;
+            border-left: 5px solid #C6A062;
+        }
+        .testi-text {
+            font-style: italic;
+            color: #F2E4D4;
+        }
+
+        /* контакт / геоточка */
+        .geo-card {
+            background: #2C231D;
+            border-radius: 32px;
+            padding: 1.8rem;
+            text-align: center;
+            border: 1px solid #7D664B;
+        }
+        .contact-info {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            background: #1A1511;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.75rem;
+            color: #A6927A;
+        }
+        hr {
+            border-color: #6E5A44;
+        }
+
+        @media (max-width: 850px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #2A211B;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 1.2rem;
+                gap: 1rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 550px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .pebble-strip-bottom {
+                height: 55px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo-wrapper">
+            <i class="fas fa-tree logo-icon"></i>
+            <div class="logo">Баня 1<span> / kryzhanivka</span></div>
+        </div>
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">Про баню</a>
+            <a href="#services">Послуги</a>
+            <a href="#gallery">Галерея</a>
+            <a href="#features">Зручності</a>
+            <a href="#contact">Контакти</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero секция: фон back.jpg + камни и пар в самом низу -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content" data-aos="fade-right">
+                    <span class="section-subtitle"><i class="fas fa-fire"></i> АВТЕНТИЧНА АТМОСФЕРА</span>
+                    <h1>Відпочинок у стилі<br><i>справжньої бані</i></h1>
+                    <p class="hero-lead">
+                        Традиційна парна, аромат дерева та цілющий жар. Проведіть час із користю для тіла та душі в колі близьких.
+                    </p>
+                    <div class="badge-wood">
+                        <span class="badge"><i class="fas fa-users"></i> до 10 гостей</span>
+                        <span class="badge"><i class="fas fa-water"></i> басейн + гідромасаж</span>
+                        <span class="badge"><i class="fas fa-fire"></i> дров'яна піч</span>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <img class="hero-img" src="main.jpg" alt="Інтер'єр бані 1" onerror="this.src='https://placehold.co/800x600/3E2E23/D4AF77?text=Баня+1'">
+                </div>
+            </div>
+        </div>
+        <div class="pebble-steam-footer">
+            <div class="steam-clouds">
+                <div class="steam-puff-bottom sp1"></div>
+                <div class="steam-puff-bottom sp2"></div>
+                <div class="steam-puff-bottom sp3"></div>
+                <div class="steam-puff-bottom sp4"></div>
+                <div class="steam-puff-bottom sp5"></div>
+                <div class="steam-puff-bottom sp6"></div>
+                <div class="steam-puff-bottom sp7"></div>
+                <div class="steam-base-layer-bottom"></div>
+            </div>
+            <div class="pebble-strip-bottom"></div>
+        </div>
+    </section>
+
+    <!-- СЕКЦІЯ ПРО БАНЮ (українською мовою + гіфка par.gif на фоні) -->
+    <section id="about" class="bg-wood about-par-section">
+        <img class="par-bg" src="par.gif" alt="пар" onerror="this.style.display='none'">
+        <div class="container">
+            <div data-aos="fade-up" style="text-align: center;">
+                <span class="section-subtitle"><i class="fas fa-leaf"></i> ТРАДИЦІЙНА СЛОВ'ЯНСЬКА ПАРНА</span>
+                <h2>Тепло, що відновлює</h2>
+            </div>
+            <div class="hero-grid" style="gap: 2rem;" data-aos="fade-up">
+                <div>
+                    <p style="margin-bottom: 1.2rem;">У затишному куточку Крижанівки розташоване особливе місце – комфортабельна баня, де кожен елемент пронизаний атмосферою релаксу. Запрошуємо вас поринути у світ традиційних слов'янських банних процедур. Парилка, наповнена ароматом берези та евкаліпта, допоможе розслабити не лише тіло, а й душу, адже тут легко забути про повсякденну метушню.</p>
+                    <p style="margin-bottom: 1.2rem;">Приводьте з собою друзів або родину – місткість бані дозволяє гостинно приймати компанії до 10 осіб. Нехай кожен подих стає глибшим, а розмови в затишній вітальні – щирішими. Пропустіть струмені гідромасажу крізь пальці або пориньте у прохолодний басейн після гарячої парної. Бажаєте додати вишуканості? Додайте кілька крапель ефірної олії у воду та вдихніть чаруючі аромати, які наповнять приміщення.</p>
+                    <p>Зробіть вечір по-справжньому незабутнім, готуючи страви на мангалі та відпочиваючи у вітальні за столом, де кожне чаювання перетворюється на маленьке свято. І, звісно, для тих, хто цінує моменти умиротворення – бар з прохолодними напоями. Піддайтеся поклику Крижанівської бані, і нехай кожен ваш візит стане подорожжю у світ справжнього задоволення та гармонії.</p>
+                </div>
+                <div>
+                    <div class="geo-card">
+                        <i class="fas fa-map-marker-alt" style="font-size: 2rem; color:#DAB472;"></i>
+                        <h3 style="margin-top: 0.5rem;">Наша адреса</h3>
+                        <p><strong>вулиця Ветеранів, 4, Крижанівка, Одеська область, 67562</strong></p>
+                        <hr style="margin: 1rem 0;">
+                        <p><i class="fas fa-clock"></i> Працюємо: ПН-НД 10:00 – 23:00</p>
+                        <p><i class="fas fa-phone-alt"></i> +38 (099) 123 45 67</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦІЯ "НАШІ ПРОЦЕДУРИ" З ФОНОВИМ ЗОБРАЖЕННЯМ RITUAL.JPG -->
+    <section id="services" class="bg-darkwood services-bg-section">
+        <img class="ritual-bg" src="ritual.jpg" alt="банний ритуал" onerror="this.style.display='none'">
+        <div class="container">
+            <div data-aos="fade-up" style="text-align: center;">
+                <span class="section-subtitle"><i class="fas fa-hot-tub"></i> НАШІ ПРОЦЕДУРИ</span>
+                <h2>Банний ритуал сповна</h2>
+            </div>
+            <div class="services-grid" data-aos="fade-up">
+                <div class="service-card"><div class="service-icon"><i class="fas fa-droplet"></i></div><h3>Парна на дровах</h3><p>Справжня жарка парилка з ароматними віниками, березовий дух та натуральне тепло.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-swimmer"></i></div><h3>Басейн + гідромасаж</h3><p>Освіжаюче занурення після парильної кімнати, протиток та гідромасажна зона.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-tree"></i></div><h3>Відро-водоспад</h3><p>Контрастний душ із водоспадом – бадьорість та користь для судин.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-mug-hot"></i></div><h3>Трав'яний чай</h3><p>Чорний, зелений, а також запашний чай із трав – для повного розслаблення.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ГАЛЕРЕЯ: фото 1-6.jpg + фоновий малюнок gall.jpg -->
+    <section id="gallery" class="bg-wood gallery-bg-section">
+        <img class="gall-bg" src="gall.jpg" alt="фон галереї" onerror="this.style.display='none'">
+        <div class="container">
+            <div data-aos="fade-up" style="text-align: center;">
+                <span class="section-subtitle"><i class="fas fa-images"></i> АТМОСФЕРА</span>
+                <h2>Куточки нашої парної</h2>
+            </div>
+            <div class="gallery-grid" data-aos="fade-up">
+                <img src="1.jpg" alt="Баня інтер'єр" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+1'">
+                <img src="2.jpg" alt="Парна з камінням" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+2'">
+                <img src="3.jpg" alt="Зона відпочинку" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+3'">
+                <img src="4.jpg" alt="Басейн" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+4'">
+                <img src="5.jpg" alt="Мангал та тераса" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+5'">
+                <img src="6.jpg" alt="Віники та чай" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+6'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Банные аксессуары и доп. услуги (мангал, посуда и тд) -->
+    <section id="features">
+        <div class="container">
+            <div data-aos="fade-up" style="text-align: center;">
+                <span class="section-subtitle">КОМФОРТ ТА ЗРУЧНІСТЬ</span>
+                <h2>Все для ідеального відпочинку</h2>
+            </div>
+            <div class="features-flex" data-aos="fade-up">
+                <div class="feature-item"><i class="fas fa-utensils"></i> Мангал + посуд</div>
+                <div class="feature-item"><i class="fas fa-broom"></i> Віники, шапки, капці</div>
+                <div class="feature-item"><i class="fas fa-wifi"></i> Безкоштовний Wi-Fi</div>
+                <div class="feature-item"><i class="fas fa-hand-sparkles"></i> Арома-олії</div>
+                <div class="feature-item"><i class="fas fa-chair"></i> Кімната відпочинку</div>
+                <div class="feature-item"><i class="fas fa-percent"></i> Можна зі своєю їжею</div>
+                <div class="feature-item"><i class="fas fa-wine-bottle"></i> Бар з прохолодними напоями</div>
+                <div class="feature-item"><i class="fas fa-hand-holding-heart"></i> Рушники та аксесуари</div>
+            </div>
+            <div data-aos="fade-up" style="background: #32281F; border-radius: 2rem; padding: 1.5rem; margin-top: 1rem;">
+                <p><strong>Вид парної:</strong> баня на дровах. <strong>Місткість:</strong> 10 осіб. <strong>Аквазона:</strong> басейн, протиток, душ, гідромасаж, відро-водоспад. Напої — чай чорний, зелений, трав'яний. Затишна вітальня з довгим столом та зона барбекю.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Обобщённые отзывы (без массажа, о бане и временипрепровождении) -->
+    <section>
+        <div class="container">
+            <div data-aos="fade-up" style="text-align: center;">
+                <span class="section-subtitle"><i class="fas fa-star"></i> ВІДГУКИ ГОСТЕЙ</span>
+                <h2>Чудовий час у Бані 1</h2>
+            </div>
+            <div class="testimonials" data-aos="fade-up">
+                <div class="testi-card"><div class="testi-text">«Чудова баня! Парна на дровах просто казкова, після неї басейн з прохолодною водою — насолода. З друзями провели незабутній вечір, душевна атмосфера».</div><p style="margin-top: 1rem;">— Олександр, Одеса</p></div>
+                <div class="testi-card"><div class="testi-text">«Найкраще місце для релаксу в Крижанівці. У вітальні пахне деревом, є всі банні аксесуари. Чай з травами, мангал на вулиці. Рекомендую компаніям до 10 осіб».</div><p style="margin-top: 1rem;">— Ірина, Київ</p></div>
+                <div class="testi-card"><div class="testi-text">«Справжня слов'янська баня з гідромасажем та відром-водоспадом. Відпочили душею і тілом, дуже затишно та чисто. Захочеться повернутись ще!»</div><p style="margin-top: 1rem;">— Родина Петренків</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакт та геоточка -->
+    <section id="contact" class="bg-darkwood">
+        <div class="container">
+            <div class="geo-card" data-aos="fade-up">
+                <i class="fas fa-map-pin" style="font-size: 2rem; color: #D9AC6C;"></i>
+                <h3>Як нас знайти</h3>
+                <p><strong>вулиця Ветеранів, 4, Крижанівка, Одеська область, 67562</strong></p>
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +38 099 123 45 67</span>
+                    <span><i class="fab fa-telegram"></i> Telegram</span>
+                    <span><i class="fas fa-envelope"></i> banya1@kryzhanivka.ua</span>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <p><i class="fas fa-clock"></i> Графік роботи: ПН-НД 10:00 – 23:00</p>
+                    <p><i class="fas fa-mug-hot"></i> Приносьте свої страви або готуйте на мангалі — ми надаємо посуд та зону барбекю.</p>
+                    <p><i class="fas fa-leaf"></i> Віники, шапки, рушники — все включено.</p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; border-radius: 28px; overflow: hidden; border: 1px solid #6C5A46;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2749.091289645444!2d30.6709445!3d46.4740161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c6311915938e27%3A0x6b0ba75a3b5b1e62!2z0LLRg9C70LjRhtGPINCS0LXRgtC10YDQsNC90ZbQsiwgNCwg0JrRgNC40LbQsNC90ZbQstC60LAsINCe0LTQtdGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA2NzU2Mg!5e0!3m2!1suk!2sua!4v1700000000000!5m2!1suk!2sua" width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Баня 1 — Справжня парна на дровах у Крижанівці. Традиції, тепло, гармонія.</p>
+    <p style="margin-top: 0.5rem;"><i class="fas fa-tree"></i> Затишок для душі та тіла</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true });
+    const menuToggle = document.getElementById('menuToggle');
+    const navDiv = document.getElementById('navLinks');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => navDiv.classList.toggle('active'));
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === "#") return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+                if (navDiv.classList.contains('active')) navDiv.classList.remove('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>
