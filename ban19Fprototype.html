@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <meta name="description" content="Баня 1 — затишна баня в Крижанівці. Парна на дровах, гідромасаж, басейн, мангал та кімната відпочинку. Місце для релаксу та зустрічей з друзями до 8 осіб.">
+    <title>Баня 1 | Справжня парна у Крижанівці</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #2B241E;
+            color: #E9DFD3;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        h1, h2, h3, .logo, .serif {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 6vw, 2.4rem);
+            margin-bottom: 1rem;
+            color: #F0DDB0;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-size: clamp(1.3rem, 4.5vw, 1.6rem);
+            margin-bottom: 0.75rem;
+            color: #E2C28B;
+        }
+
+        .section-subtitle {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C2A575;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.2rem;
+            width: 100%;
+        }
+
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(194, 165, 117, 0.2);
+        }
+
+        .bg-wood {
+            background: #2B241E;
+        }
+        .bg-darkwood {
+            background: #221C17;
+        }
+
+        /* header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.8rem 1rem;
+            z-index: 1000;
+            background: rgba(30, 25, 21, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #C2A57540;
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .logo-icon {
+            font-size: 1.5rem;
+            color: #E0B87A;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #F5E2B2;
+            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+        }
+        .logo span {
+            font-weight: 400;
+            font-size: 0.85rem;
+            color: #BD9D6B;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #EFE0CD;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 0.75rem;
+        }
+        .nav-links a:hover {
+            color: #E2B87A;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #E2B87A;
+            cursor: pointer;
+        }
+        .lang-buttons {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+        .lang-btn {
+            background: none;
+            border: 1px solid #C2A575;
+            color: #C2A575;
+            padding: 0.2rem 0.6rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .lang-btn.active {
+            background: #C2A575;
+            color: #1E1915;
+        }
+
+        /* hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 5rem;
+            background: linear-gradient(0deg, rgba(32, 26, 21, 0.7), rgba(47, 38, 32, 0.7)), url('back.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 7vw, 3.8rem);
+            line-height: 1.1;
+            color: #F9E5B3;
+        }
+        .hero h1 i {
+            color: #D9AA60;
+            font-style: italic;
+        }
+        .hero-lead {
+            font-size: 0.9rem;
+            color: #F0E3D4;
+            margin: 1rem 0 1.2rem;
+            max-width: 500px;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .hero-img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 25px 35px rgba(0,0,0,0.5);
+            border: 1px solid #B4915F;
+        }
+        .badge-wood {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+            margin: 1rem 0 1rem;
+        }
+        .badge {
+            background: rgba(63, 49, 38, 0.85);
+            backdrop-filter: blur(4px);
+            padding: 0.3rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* камни и пар */
+        .pebble-steam-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .pebble-strip-bottom {
+            background: repeating-linear-gradient(45deg, rgba(90, 75, 60, 0.95) 0px, rgba(90, 75, 60, 0.95) 5px, rgba(70, 58, 46, 0.9) 5px, rgba(70, 58, 46, 0.9) 14px);
+            width: 100%;
+            height: 60px;
+            position: relative;
+            box-shadow: inset 0 8px 12px rgba(0,0,0,0.4), 0 -2px 6px rgba(0,0,0,0.2);
+            border-top: 2px solid #6E5A44;
+        }
+        .pebble-strip-bottom::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 12% 25%, #8E7658 2px, transparent 2px),
+                              radial-gradient(circle at 40% 70%, #7A6348 2.5px, transparent 2.5px),
+                              radial-gradient(circle at 68% 30%, #9C8462 2px, transparent 2px),
+                              radial-gradient(circle at 85% 65%, #6B543C 3px, transparent 3px),
+                              radial-gradient(circle at 25% 85%, #B2936C 1.5px, transparent 1.5px);
+            background-size: 45px 45px, 65px 65px, 80px 80px, 100px 100px, 60px 60px;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+        .steam-clouds {
+            position: absolute;
+            bottom: 55px;
+            left: 0;
+            width: 100%;
+            height: 160px;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .steam-puff-bottom {
+            position: absolute;
+            background: radial-gradient(ellipse at center, rgba(235, 220, 185, 0.55) 0%, rgba(210, 185, 140, 0.3) 40%, rgba(180, 150, 110, 0) 80%);
+            border-radius: 60%;
+            filter: blur(20px);
+            animation: floatUpSlow 7s infinite alternate ease-in-out;
+        }
+        .sp1 { width: 100px; height: 100px; bottom: 15px; left: 3%; animation-duration: 7s; }
+        .sp2 { width: 140px; height: 140px; bottom: 35px; left: 22%; animation-duration: 10s; }
+        .sp3 { width: 90px; height: 90px; bottom: -5px; left: 48%; animation-duration: 6s; }
+        .sp4 { width: 120px; height: 120px; bottom: 20px; left: 68%; animation-duration: 9s; }
+        .sp5 { width: 160px; height: 160px; bottom: -10px; left: 84%; animation-duration: 12s; }
+        .sp6 { width: 80px; height: 80px; bottom: 40px; left: 12%; animation-duration: 5.5s; }
+        .steam-base-layer-bottom {
+            position: absolute;
+            bottom: 45px;
+            left: -5%;
+            width: 110%;
+            height: 80px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(210, 185, 140, 0.45) 0%, rgba(190, 155, 115, 0.2) 50%, rgba(0,0,0,0) 100%);
+            filter: blur(18px);
+            animation: baseFloatBottom 5s infinite alternate;
+        }
+        @keyframes floatUpSlow {
+            0% { transform: translateY(0) scale(0.9); opacity: 0.45; }
+            100% { transform: translateY(-90px) scale(1.2); opacity: 0; }
+        }
+        @keyframes baseFloatBottom {
+            0% { opacity: 0.3; transform: translateY(0px); }
+            100% { opacity: 0.8; transform: translateY(-25px); }
+        }
+
+        /* секции с фонами */
+        .about-par-section, .services-bg-section, .gallery-bg-section {
+            position: relative;
+            overflow: hidden;
+        }
+        .par-bg, .ritual-bg, .gall-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .about-par-section .container,
+        .services-bg-section .container,
+        .gallery-bg-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        .services-bg-section .service-card {
+            background: rgba(55, 46, 38, 0.9);
+            backdrop-filter: blur(3px);
+        }
+
+        /* cards */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: #372E26;
+            padding: 1.5rem;
+            border-radius: 24px;
+            transition: 0.25s;
+            border: 1px solid #5B4A39;
+        }
+        .service-card:hover {
+            background: #42382F;
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            font-size: 2rem;
+            color: #DDB67E;
+            margin-bottom: 0.8rem;
+        }
+
+        /* gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+        .gallery-grid img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 1px solid #8B7552;
+            transition: 0.2s;
+        }
+
+        /* features */
+        .features-flex {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .feature-item {
+            background: #322922;
+            padding: 0.8rem 1rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        /* testimonials */
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .testi-card {
+            background: #2F2720;
+            padding: 1.5rem;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 320px;
+            border-left: 4px solid #C6A062;
+        }
+        .testi-text {
+            font-style: italic;
+            color: #F2E4D4;
+            font-size: 0.9rem;
+        }
+
+        /* contact */
+        .geo-card {
+            background: #2C231D;
+            border-radius: 28px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #7D664B;
+        }
+        .price-tag {
+            display: inline-block;
+            background: #C2A575;
+            color: #1E1915;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .contact-phones {
+            margin: 0.8rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .contact-phones span {
+            font-size: 1rem;
+            font-weight: 500;
+            background: rgba(0,0,0,0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 40px;
+        }
+        .viber-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #7360D1;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            margin-top: 0.5rem;
+        }
+        .viber-btn:hover {
+            background: #5E4BC4;
+        }
+
+        footer {
+            background: #1A1511;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.7rem;
+            color: #A6927A;
+        }
+        .footer-phones {
+            margin: 0.8rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .footer-phones a {
+            color: #DDB67E;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        .footer-phones a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 850px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #2A211B;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                padding: 1rem;
+                gap: 0.8rem;
+            }
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .container { padding: 0 1rem; }
+            section { padding: 3rem 0; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 550px) {
+            .pebble-strip-bottom { height: 45px; }
+            .services-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .features-flex { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .badge { font-size: 0.65rem; padding: 0.25rem 0.7rem; }
+            .testimonials { flex-direction: column; align-items: center; }
+        }
+        @media (max-width: 400px) {
+            .logo { font-size: 1.1rem; }
+            .logo-icon { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo-wrapper">
+            <i class="fas fa-tree logo-icon"></i>
+            <div class="logo">Баня 1<span> / kryzhanivka</span></div>
+        </div>
+        <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        <div class="nav-links" id="navLinks">
+            <a href="#about" data-i18n="nav-about">Про баню</a>
+            <a href="#services" data-i18n="nav-services">Послуги</a>
+            <a href="#gallery" data-i18n="nav-gallery">Галерея</a>
+            <a href="#features" data-i18n="nav-features">Зручності</a>
+            <a href="#contact" data-i18n="nav-contact">Контакти</a>
+            <div class="lang-buttons">
+                <button class="lang-btn active" data-lang="uk">UA</button>
+                <button class="lang-btn" data-lang="ru">RU</button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content" data-aos="fade-right">
+                    <span class="section-subtitle" data-i18n="hero-subtitle"><i class="fas fa-fire"></i> АВТЕНТИЧНА АТМОСФЕРА</span>
+                    <h1><span data-i18n="hero-title1">Баня на дровах</span></h1>
+                    <p class="hero-lead" data-i18n="hero-lead">
+                        Традиційна парна, аромат дерева та цілющий жар. Проведіть час із користю для тіла та душі в колі близьких.
+                    </p>
+                    <div class="badge-wood">
+                        <span class="badge"><i class="fas fa-clock"></i> <span data-i18n="badge-24h">працюємо цілодобово</span></span>
+                        <span class="badge"><i class="fas fa-sun"></i> <span data-i18n="badge-summer">працюємо влітку</span></span>
+                        <span class="badge"><i class="fas fa-calendar-alt"></i> <span data-i18n="badge-year">працюємо цілий рік</span></span>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <img class="hero-img" src="main.jpg" alt="Інтер'єр бані 1" onerror="this.src='https://placehold.co/800x600/3E2E23/D4AF77?text=Баня+1'">
+                </div>
+            </div>
+        </div>
+        <div class="pebble-steam-footer">
+            <div class="steam-clouds">
+                <div class="steam-puff-bottom sp1"></div>
+                <div class="steam-puff-bottom sp2"></div>
+                <div class="steam-puff-bottom sp3"></div>
+                <div class="steam-puff-bottom sp4"></div>
+                <div class="steam-puff-bottom sp5"></div>
+                <div class="steam-puff-bottom sp6"></div>
+                <div class="steam-base-layer-bottom"></div>
+            </div>
+            <div class="pebble-strip-bottom"></div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="bg-wood about-par-section">
+        <img class="par-bg" src="par.gif" alt="пар" onerror="this.style.display='none'">
+        <div class="container">
+            <div data-aos="fade-up" style="text-align: center;">
+                <span class="section-subtitle" data-i18n="about-subtitle"><i class="fas fa-leaf"></i> ТРАДИЦІЙНА СЛОВ'ЯНСЬКА ПАРНА</span>
+                <h2 data-i18n="about-title">Наша баня пропонує</h2>
+            </div>
+            <div class="hero-grid" style="gap: 1.5rem;" data-aos="fade-up">
+                <div>
+                    <p style="margin-bottom: 1rem; font-size: 0.95rem;" data-i18n="about-text1">У затишному куточку Крижанівки розташоване особливе місце – комфортабельна баня, де кожен елемент пронизаний атмосферою релаксу. Запрошуємо вас поринути у світ традиційних слов'янських банних процедур. Парилка, наповнена ароматом берези та евкаліпта, допоможе розслабити не лише тіло, а й душу, адже тут легко забути про повсякденну метушню.</p>
+                    <p style="margin-bottom: 1rem; font-size: 0.95rem;" data-i18n="about-text2">Приводьте з собою друзів або родину – місткість бані дозволяє гостинно приймати компанії до 8 осіб. Нехай кожен подих стає глибшим, а розмови в затишній вітальні – щирішими. Пропустіть струмені гідромасажу крізь пальці або пориньте у прохолодний басейн після гарячої парної.</p>
+                    <p style="font-size: 0.95rem;" data-i18n="about-text3">Зробіть вечір по-справжньому незабутнім, готуючи страви на мангалі та відпочиваючи у вітальні за столом. Піддайтеся поклику Крижанівської бані, і нехай кожен ваш візит стане подорожжю у світ справжнього задоволення та гармонії.</p>
+                </div>
+                <div>
+                    <div class="geo-card">
+                        <i class="fas fa-map-marker-alt" style="font-size: 1.8rem; color:#DAB472;"></i>
+                        <h3 style="margin-top: 0.5rem; font-size: 1.3rem;" data-i18n="address-title">Наша адреса</h3>
+                        <p style="font-size: 0.9rem;" data-i18n="address-text"><strong>вулиця Ветеранів, 4, Крижанівка, Одеська область, 67562</strong></p>
+                        <hr style="margin: 0.8rem 0;">
+                        <div class="price-tag" data-i18n="price-tag">💰 ціна договірна</div>
+                        <p style="font-size: 0.9rem;"><i class="fas fa-clock"></i> <span data-i18n="work-hours">Працюємо: цілодобово</span></p>
+                        <div class="contact-phones">
+                            <span><i class="fas fa-phone-alt"></i> 096 420 85 23</span>
+                            <span><i class="fas fa-phone-alt"></i> 050 738 51 53</span>
+                        </div>
+                        <a href="viber://chat?number=380507385153" class="viber-btn">
+                            <i class="fab fa-viber"></i> <span data-i18n="viber-btn">Написати у Viber</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="bg-darkwood services-bg-section">
+        <img class="ritual-bg" src="ritual.jpg" alt="банний ритуал" onerror="this.style.display='none'">
+        <div class="container">
+            <div data-aos="fade-up" style="text-align: center;">
+                <span class="section-subtitle" data-i18n="services-subtitle"><i class="fas fa-hot-tub"></i> НАШІ ПОСЛУГИ</span>
+                <h2 data-i18n="services-title">Банні послуги</h2>
+            </div>
+            <div class="services-grid" data-aos="fade-up">
+                <div class="service-card"><div class="service-icon"><i class="fas fa-droplet"></i></div><h3 data-i18n="service1-title">Парна на дровах</h3><p data-i18n="service1-desc">Справжня жарка парилка з ароматними віниками, березовий дух та натуральне тепло.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-swimmer"></i></div><h3 data-i18n="service2-title">Басейн + гідромасаж</h3><p data-i18n="service2-desc">Освіжаюче занурення після парильної кімнати, протиток та гідромасажна зона.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-tree"></i></div><h3 data-i18n="service3-title">Відро-водоспад</h3><p data-i18n="service3-desc">Контрастний душ із водоспадом – бадьорість та користь для судин.</p></div>
+                <div class="service-card"><div class="service-icon"><i class="fas fa-mug-hot"></i></div><h3 data-i18n="service4-title">Трав'яний чай</h3><p data-i18n="service4-desc">Чорний, зелений, а також запашний чай із трав – для повного розслаблення. Очищена вода.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="bg-wood gallery-bg-section">
+        <img class="gall-bg" src="gall.jpg" alt="фон галереї" onerror="this.style.display='none'">
+        <div class="container">
+            <div data-aos="fade-up" style="text-align: center;">
+                <span class="section-subtitle" data-i18n="gallery-subtitle"><i class="fas fa-images"></i> АТМОСФЕРА</span>
+                <h2 data-i18n="gallery-title">Куточки нашої парної</h2>
+            </div>
+            <div class="gallery-grid" data-aos="fade-up">
+                <img src="1.jpg" alt="Баня інтер'єр" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+1'">
+                <img src="2.jpg" alt="Парна з камінням" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+2'">
+                <img src="3.jpg" alt="Зона відпочинку" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+3'">
+                <img src="4.jpg" alt="Басейн" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+4'">
+                <img src="5.jpg" alt="Мангал та тераса" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+5'">
+                <img src="6.jpg" alt="Віники та чай" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+6'">
+                <img src="7.jpg" alt="Атмосфера бані" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+7'">
+                <img src="8.jpg" alt="Інтер'єр парної" onerror="this.src='https://placehold.co/600x450/3E2E23/D4AF77?text=Фото+8'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features">
+        <div class="container">
+            <div data-aos="fade-up" style="text-align: center;">
+                <span class="section-subtitle" data-i18n="features-subtitle">КОМФОРТ ТА ЗРУЧНІСТЬ</span>
+                <h2 data-i18n="features-title">Все для ідеального відпочинку</h2>
+            </div>
+            <div class="features-flex" data-aos="fade-up">
+                <div class="feature-item"><i class="fas fa-utensils"></i> <span data-i18n="feature1">Мангал + посуд</span></div>
+                <div class="feature-item"><i class="fas fa-hand-holding-heart"></i> <span data-i18n="feature2">Простирадла, веники, полотенця додатково</span></div>
+                <div class="feature-item"><i class="fas fa-wifi"></i> <span data-i18n="feature3">Безкоштовний Wi-Fi</span></div>
+                <div class="feature-item"><i class="fas fa-chair"></i> <span data-i18n="feature4">Кімната відпочинку</span></div>
+                <div class="feature-item"><i class="fas fa-percent"></i> <span data-i18n="feature5">Можна зі своєю їжею</span></div>
+                <div class="feature-item"><i class="fas fa-shoe-prints"></i> <span data-i18n="feature8">Тапочки та шапки включені</span></div>
+                <div class="feature-item"><i class="fas fa-swimming-pool"></i> <span data-i18n="feature9">Глибокі басейни 2,3 м: один з крижаною водою на вулиці, інший з теплою водою в передбаннику</span></div>
+                <div class="feature-item"><i class="fas fa-water"></i> <span data-i18n="feature10">Потужна масажна установка "ТАЙФУН" на 70 атмосфер + масаж водоспад</span></div>
+            </div>
+            <div data-aos="fade-up" style="background: #32281F; border-radius: 1.5rem; padding: 1rem; margin-top: 1rem;">
+                <p style="font-size: 0.85rem;"><strong data-i18n="info-type">Вид парної:</strong> <span data-i18n="info-type-value">баня на дровах</span>. <strong data-i18n="info-capacity">Місткість:</strong> <span data-i18n="info-capacity-value">до 8 осіб</span>. <strong data-i18n="info-aqua">Аквазона:</strong> <span data-i18n="info-aqua-value">басейн, протиток, душ, гідромасаж, відро-водоспад</span>. <span data-i18n="info-drinks">Напої — чай чорний, зелений, трав'яний.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <div class="container">
+            <div data-aos="fade-up" style="text-align: center;">
+                <span class="section-subtitle" data-i18n="reviews-subtitle"><i class="fas fa-star"></i> ВІДГУКИ ГОСТЕЙ</span>
+                <h2 data-i18n="reviews-title">Баня на дровах 1</h2>
+            </div>
+            <div class="testimonials" data-aos="fade-up">
+                <div class="testi-card"><div class="testi-text" data-i18n="review1">«Чудова баня! Парна на дровах просто казкова, після неї басейн з прохолодною водою — насолода. З друзями провели незабутній вечір, душевна атмосфера».</div><p style="margin-top: 0.8rem;">— Олександр, Одеса</p></div>
+                <div class="testi-card"><div class="testi-text" data-i18n="review2">«Найкраще місце для релаксу в Крижанівці. У вітальні пахне деревом, є всі банні аксесуари. Чай з травами, мангал на вулиці. Рекомендую компаніям до 8 осіб».</div><p style="margin-top: 0.8rem;">— Ірина, Київ</p></div>
+                <div class="testi-card"><div class="testi-text" data-i18n="review3">«Справжня слов'янська баня з гідромасажем та відром-водоспадом. Відпочили душею і тілом, дуже затишно та чисто. Захочеться повернутись ще!»</div><p style="margin-top: 0.8rem;">— Родина Петренків</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-darkwood">
+        <div class="container">
+            <div class="geo-card" data-aos="fade-up">
+                <i class="fas fa-map-pin" style="font-size: 1.8rem; color: #D9AC6C;"></i>
+                <h3 style="font-size: 1.3rem;" data-i18n="contact-title">Як нас знайти</h3>
+                <p data-i18n="contact-address"><strong>вулиця Ветеранів, 4, Крижанівка, Одеська область, 67562</strong></p>
+                <div class="contact-phones">
+                    <span><i class="fas fa-phone-alt"></i> 096 420 85 23</span>
+                    <span><i class="fas fa-phone-alt"></i> 050 738 51 53</span>
+                </div>
+                <a href="viber://chat?number=380507385153" class="viber-btn">
+                    <i class="fab fa-viber"></i> <span data-i18n="contact-viber">Написати у Viber</span>
+                </a>
+                <div style="margin-top: 1.2rem;">
+                    <p style="font-size: 0.85rem;"><i class="fas fa-clock"></i> <span data-i18n="contact-hours">Графік роботи: цілодобово</span></p>
+                    <p style="font-size: 0.85rem;"><i class="fas fa-mug-hot"></i> <span data-i18n="contact-food">Приносьте свої страви або готуйте на мангалі — ми надаємо посуд та зону барбекю.</span></p>
+                </div>
+            </div>
+            <div style="margin-top: 1.5rem; border-radius: 20px; overflow: hidden; border: 1px solid #6C5A46;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2749.091289645444!2d30.6709445!3d46.4740161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c6311915938e27%3A0x6b0ba75a3b5b1e62!2z0LLRg9C70LjRhtGPINCS0LXRgtC10YDQsNC90ZbQsiwgNCwg0JrRgNC40LbQsNC90ZbQstC60LAsINCe0LTQtdGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA2NzU2Mg!5e0!3m2!1suk!2sua!4v1700000000000!5m2!1suk!2sua" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Баня 1 — <span data-i18n="footer-text">Справжня парна на дровах у Крижанівці. Традиції, тепло, гармонія.</span></p>
+    <div class="footer-phones">
+        <a href="tel:+380964208523"><i class="fas fa-phone-alt"></i> 096 420 85 23</a>
+        <a href="tel:+380507385153"><i class="fas fa-phone-alt"></i> 050 738 51 53</a>
+        <a href="viber://chat?number=380507385153"><i class="fab fa-viber"></i> Viber</a>
+    </div>
+    <p style="margin-top: 0.5rem;"><i class="fas fa-tree"></i> <span data-i18n="footer-slogan">Затишок для душі та тіла</span></p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true });
+    const menuToggle = document.getElementById('menuToggle');
+    const navDiv = document.getElementById('navLinks');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => navDiv.classList.toggle('active'));
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === "#") return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+                if (navDiv.classList.contains('active')) navDiv.classList.remove('active');
+            }
+        });
+    });
+
+    const translations = {
+        uk: {
+            "nav-about": "Про баню", "nav-services": "Послуги", "nav-gallery": "Галерея", "nav-features": "Зручності", "nav-contact": "Контакти",
+            "hero-subtitle": "АВТЕНТИЧНА АТМОСФЕРА", "hero-title1": "Баня на дровах", "hero-title2": "",
+            "hero-lead": "Традиційна парна, аромат дерева та цілющий жар. Проведіть час із користю для тіла та душі в колі близьких.",
+            "badge-24h": "працюємо цілодобово", "badge-summer": "працюємо влітку", "badge-year": "працюємо цілий рік",
+            "about-subtitle": "ТРАДИЦІЙНА СЛОВ'ЯНСЬКА ПАРНА", "about-title": "Наша баня пропонує",
+            "about-text1": "У затишному куточку Крижанівки розташоване особливе місце – комфортабельна баня, де кожен елемент пронизаний атмосферою релаксу. Запрошуємо вас поринути у світ традиційних слов'янських банних процедур. Парилка, наповнена ароматом берези та евкаліпта, допоможе розслабити не лише тіло, а й душу, адже тут легко забути про повсякденну метушню.",
+            "about-text2": "Приводьте з собою друзів або родину – місткість бані дозволяє гостинно приймати компанії до 8 осіб. Нехай кожен подих стає глибшим, а розмови в затишній вітальні – щирішими. Пропустіть струмені гідромасажу крізь пальці або пориньте у прохолодний басейн після гарячої парної.",
+            "about-text3": "Зробіть вечір по-справжньому незабутнім, готуючи страви на мангалі та відпочиваючи у вітальні за столом. Піддайтеся поклику Крижанівської бані, і нехай кожен ваш візит стане подорожжю у світ справжнього задоволення та гармонії.",
+            "address-title": "Наша адреса", "address-text": "вулиця Ветеранів, 4, Крижанівка, Одеська область, 67562",
+            "price-tag": "💰 ціна договірна", "work-hours": "Працюємо: цілодобово", "viber-btn": "Написати у Viber",
+            "services-subtitle": "НАШІ ПОСЛУГИ", "services-title": "Банні послуги",
+            "service1-title": "Парна на дровах", "service1-desc": "Справжня жарка парилка з ароматними віниками, березовий дух та натуральне тепло.",
+            "service2-title": "Басейн + гідромасаж", "service2-desc": "Освіжаюче занурення після парильної кімнати, протиток та гідромасажна зона.",
+            "service3-title": "Відро-водоспад", "service3-desc": "Контрастний душ із водоспадом – бадьорість та користь для судин.",
+            "service4-title": "Трав'яний чай", "service4-desc": "Чорний, зелений, а також запашний чай із трав – для повного розслаблення. Очищена вода.",
+            "gallery-subtitle": "АТМОСФЕРА", "gallery-title": "Куточки нашої парної",
+            "features-subtitle": "КОМФОРТ ТА ЗРУЧНІСТЬ", "features-title": "Все для ідеального відпочинку",
+            "feature1": "Мангал + посуд", "feature2": "Простирадла, веники, полотенця додатково", "feature3": "Безкоштовний Wi-Fi", "feature4": "Кімната відпочинку",
+            "feature5": "Можна зі своєю їжею", "feature8": "Тапочки та шапки включені",
+            "feature9": "Глибокі басейни 2,3 м: один з крижаною водою на вулиці, інший з теплою водою в передбаннику",
+            "feature10": "Потужна масажна установка \"ТАЙФУН\" на 70 атмосфер + масаж водоспад",
+            "info-type": "Вид парної:", "info-type-value": "баня на дровах", "info-capacity": "Місткість:", "info-capacity-value": "до 8 осіб",
+            "info-aqua": "Аквазона:", "info-aqua-value": "басейн, протиток, душ, гідромасаж, відро-водоспад", "info-drinks": "Напої — чай чорний, зелений, трав'яний.",
+            "reviews-subtitle": "ВІДГУКИ ГОСТЕЙ", "reviews-title": "Баня на дровах 1",
+            "review1": "«Чудова баня! Парна на дровах просто казкова, після неї басейн з прохолодною водою — насолода. З друзями провели незабутній вечір, душевна атмосфера».",
+            "review2": "«Найкраще місце для релаксу в Крижанівці. У вітальні пахне деревом, є всі банні аксесуари. Чай з травами, мангал на вулиці. Рекомендую компаніям до 8 осіб».",
+            "review3": "«Справжня слов'янська баня з гідромасажем та відром-водоспадом. Відпочили душею і тілом, дуже затишно та чисто. Захочеться повернутись ще!»",
+            "contact-title": "Як нас знайти", "contact-address": "вулиця Ветеранів, 4, Крижанівка, Одеська область, 67562",
+            "contact-viber": "Написати у Viber", "contact-hours": "Графік роботи: цілодобово",
+            "contact-food": "Приносьте свої страви або готуйте на мангалі — ми надаємо посуд та зону барбекю.",
+            "footer-text": "Справжня парна на дровах у Крижанівці. Традиції, тепло, гармонія.",
+            "footer-slogan": "Затишок для душі та тіла"
+        },
+        ru: {
+            "nav-about": "О бане", "nav-services": "Услуги", "nav-gallery": "Галерея", "nav-features": "Удобства", "nav-contact": "Контакты",
+            "hero-subtitle": "АУТЕНТИЧНАЯ АТМОСФЕРА", "hero-title1": "Баня на дровах", "hero-title2": "",
+            "hero-lead": "Традиционная парная, аромат дерева и целительный жар. Проведите время с пользой для тела и души в кругу близких.",
+            "badge-24h": "работаем круглосуточно", "badge-summer": "работаем летом", "badge-year": "работаем круглый год",
+            "about-subtitle": "ТРАДИЦИОННАЯ СЛАВЯНСКАЯ ПАРНАЯ", "about-title": "Наша баня предлагает",
+            "about-text1": "В уютном уголке Крыжановки находится особенное место – комфортабельная баня, где каждый элемент пропитан атмосферой релакса. Приглашаем вас окунуться в мир традиционных славянских банных процедур. Парная, наполненная ароматом березы и эвкалипта, поможет расслабить не только тело, но и душу, ведь здесь легко забыть о повседневной суете.",
+            "about-text2": "Приводите с собой друзей или семью – вместимость бани позволяет гостеприимно принимать компании до 8 человек. Пусть каждый вздох становится глубже, а разговоры в уютной гостиной – более искренними. Пропустите струи гидромассажа сквозь пальцы или окунитесь в прохладный бассейн после горячей парной.",
+            "about-text3": "Сделайте вечер по-настоящему незабываемым, готовя блюда на мангале и отдыхая в гостиной за столом. Поддайтесь зову Крыжановской бани, и пусть каждый ваш визит станет путешествием в мир истинного удовольствия и гармонии.",
+            "address-title": "Наш адрес", "address-text": "улица Ветеранов, 4, Крыжановка, Одесская область, 67562",
+            "price-tag": "💰 цена договорная", "work-hours": "Работаем: круглосуточно", "viber-btn": "Написать в Viber",
+            "services-subtitle": "НАШИ УСЛУГИ", "services-title": "Банные услуги",
+            "service1-title": "Парная на дровах", "service1-desc": "Настоящая жаркая парилка с ароматными вениками, березовый дух и натуральное тепло.",
+            "service2-title": "Бассейн + гидромассаж", "service2-desc": "Освежающее погружение после парной, противоток и гидромассажная зона.",
+            "service3-title": "Ведро-водопад", "service3-desc": "Контрастный душ с водопадом – бодрость и польза для сосудов.",
+            "service4-title": "Травяной чай", "service4-desc": "Черный, зеленый, а также ароматный травяной чай – для полного расслабления. Очищенная вода.",
+            "gallery-subtitle": "АТМОСФЕРА", "gallery-title": "Уголки нашей парной",
+            "features-subtitle": "КОМФОРТ И УДОБСТВО", "features-title": "Всё для идеального отдыха",
+            "feature1": "Мангал + посуда", "feature2": "Простыни, веники, полотенца дополнительно", "feature3": "Бесплатный Wi-Fi", "feature4": "Комната отдыха",
+            "feature5": "Можно со своей едой", "feature8": "Тапочки и шапки включены",
+            "feature9": "Глубокие бассейны 2,3 м: один с ледяной водой на улице, другой с теплой водой в предбаннике",
+            "feature10": "Мощная массажная установка \"ТАЙФУН\" на 70 атмосфер + массаж водопад",
+            "info-type": "Вид парной:", "info-type-value": "баня на дровах", "info-capacity": "Вместимость:", "info-capacity-value": "до 8 человек",
+            "info-aqua": "Аквазона:", "info-aqua-value": "бассейн, противоток, душ, гидромассаж, ведро-водопад", "info-drinks": "Напитки — чай черный, зеленый, травяной.",
+            "reviews-subtitle": "ОТЗЫВЫ ГОСТЕЙ", "reviews-title": "Баня на дровах 1",
+            "review1": "«Отличная баня! Парная на дровах просто сказочная, после неё бассейн с прохладной водой — наслаждение. С друзьями провели незабываемый вечер, душевная атмосфера».",
+            "review2": "«Лучшее место для релакса в Крыжановке. В гостиной пахнет деревом, есть все банные принадлежности. Чай с травами, мангал на улице. Рекомендую компаниям до 8 человек».",
+            "review3": "«Настоящая славянская баня с гидромассажем и ведром-водопадом. Отдохнули душой и телом, очень уютно и чисто. Захочется вернуться снова!»",
+            "contact-title": "Как нас найти", "contact-address": "улица Ветеранов, 4, Крыжановка, Одесская область, 67562",
+            "contact-viber": "Написать в Viber", "contact-hours": "График работы: круглосуточно",
+            "contact-food": "Приносите свои блюда или готовьте на мангале — мы предоставляем посуду и зону барбекю.",
+            "footer-text": "Настоящая парная на дровах в Крыжановке. Традиции, тепло, гармония.",
+            "footer-slogan": "Уют для души и тела"
+        }
+    };
+
+    function setLanguage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                if (el.innerHTML.includes('<i') && !el.classList.contains('feature-item') && !el.classList.contains('badge')) {
+                    const iconHtml = el.querySelector('i') ? el.querySelector('i').outerHTML : '';
+                    el.innerHTML = iconHtml + ' ' + translations[lang][key];
+                } else {
+                    el.innerText = translations[lang][key];
+                }
+            }
+        });
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
+    });
+    setLanguage('uk');
+</script>
+</body>
+</html>
